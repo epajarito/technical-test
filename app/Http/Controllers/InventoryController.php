@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Inventory;
 use App\Http\Requests\Inventory\SavingRequest;
+use Illuminate\Support\Facades\Gate;
+
 
 class InventoryController extends Controller
 {
@@ -36,16 +38,19 @@ class InventoryController extends Controller
 
     public function show(Inventory $inventory)
     {
+        Gate::authorize('view', $inventory);
         return view('inventories.show', compact('inventory'));
     }
 
     public function edit(Inventory $inventory)
     {
+        Gate::authorize('view', $inventory);
         return view('inventories.edit', compact('inventory'));
     }
 
     public function update(SavingRequest $request, Inventory $inventory)
     {
+        Gate::authorize('update', $inventory);
         $inventory->update($request->validated());
 
         return redirect()->route('inventories.index');
@@ -53,6 +58,7 @@ class InventoryController extends Controller
 
     public function destroy(Inventory $inventory)
     {
+        Gate::authorize('delete', $inventory);
         $inventory->delete();
 
         return redirect()->route('inventories.index');
