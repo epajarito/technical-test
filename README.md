@@ -59,3 +59,25 @@ En caso de generar un nuevo usuario solo podrá ver su inventario.
 ```bash
 ./vendor/bin/pest --parallel
 ```
+## Bonus - Desarrollo de API
+
+### NOTA: En caso de que se halla ejecutado los pasos anteriores, se debe ejecutar el siguiente comando
+```bash
+php composer install
+php artisan migrate
+```
+
+## Adicional se generaron tests para la API
+```bash
+./vendor/bin/pest --parallel
+```
+### Endpoints de la API
+
+| Endpoint                     | Descripción                   |
+|------------------------------|-------------------------------|
+| POST /api/auth/login         | Inicio de sessión             |
+| POST /api/auth/register      | Creación de nueva cuenta      |
+| GET /api/inventories         | Obtener todos los inventarios |
+| POST /api/inventories        | Crear un inventario           |
+| PUT /api/inventories/{id}    | Actualizar un inventario      |
+| DELETE /api/inventories/{id} | Eliminar un inventario        |
