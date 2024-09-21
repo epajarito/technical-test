@@ -24,9 +24,9 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-5. Ejecutar las migraciones y seeders
+5. Ejecutar las migraciones y seeders (omitir si se desea usar la base de datos de prueba)
 ```bash
-php artisan migrate --seed
+php artisan migrate:refresh --seed
 ```
 
 6. Iniciar el servidor
@@ -51,6 +51,9 @@ sistema tradicional: http://localhost:8000/login
 Usuario: test@example.com
 Contraseña: password
 ```
+Este usuario tiene la capacidad de ver inventarios de otros usuarios, se concidera un usuario administrador.
+En caso de generar un nuevo usuario solo podrá ver su inventario.
+
 
 ## Opcional ejecutar tests (pestPHP)
 ```bash
