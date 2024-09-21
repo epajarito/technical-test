@@ -1,6 +1,6 @@
 ## Sistema de Inventario en Laravel
 
-Este proyecto es un sistema de inventario desarrollado en Laravel 8, con el objetivo de llevar un control de los productos de una empresa.
+Este proyecto es un sistema de inventario desarrollado en Laravel 11.
 
 ## Instalación
 
