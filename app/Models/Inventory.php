@@ -22,4 +22,9 @@ class Inventory extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getPriceFormatedAttribute(): string
+    {
+        return '$' . number_format($this->price, 2);
+    }
 }
