@@ -17,4 +17,5 @@ Route::prefix('auth')->group(function () {
     Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
 });
 
-Route::apiResource('inventories', InventoryController::class)->middleware('auth');
+Route::apiResource('inventories', InventoryController::class)->middleware('auth')
+    ->except('show');
