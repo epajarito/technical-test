@@ -85,6 +85,12 @@
         </div>
     </div>
     <script>
+
+        let session = '{{ session()->has('success') }}'
+        let sessionMessage = '{{ session()->get('success') }}'
+        if(session){
+            alert(sessionMessage);
+        }
         document.querySelectorAll(".delete").forEach((element) => {
             element.addEventListener("submit", function (e) {
                 e.preventDefault();
