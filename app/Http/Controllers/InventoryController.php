@@ -33,7 +33,8 @@ class InventoryController extends Controller
     {
         Inventory::create($request->validated());
 
-        return redirect()->route('inventories.index');
+        return redirect()->route('inventories.index')
+            ->with('success', __('Inventory created successfully'));
     }
 
     public function show(Inventory $inventory)
@@ -53,7 +54,8 @@ class InventoryController extends Controller
         Gate::authorize('update', $inventory);
         $inventory->update($request->validated());
 
-        return redirect()->route('inventories.index');
+        return redirect()->route('inventories.index')
+            ->with('success', __('Inventory updated successfully'));
     }
 
     public function destroy(Inventory $inventory)
@@ -61,6 +63,7 @@ class InventoryController extends Controller
         Gate::authorize('delete', $inventory);
         $inventory->delete();
 
-        return redirect()->route('inventories.index');
+        return redirect()->route('inventories.index')
+            ->with('success', __('Inventory deleted successfully'));
     }
 }
