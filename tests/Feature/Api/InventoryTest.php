@@ -18,6 +18,19 @@ it('can list my inventories', function () {
         ->toHaveCount(5);
 });
 
+it('can not list my inventories without authentication', function () {
+    User::factory()->hasInventories(5)->create();
+
+    $response = getJson(route('api.inventories.index'));
+
+    expect($response->status())
+        ->toBe(401)
+        ->and($response->json())
+        ->toHaveKey('message')
+        ->and($response->json('message'))
+        ->toBe('Unauthenticated.');
+});
+
 it("can create an inventory", function (){
     $user = User::factory()->create();
     actingAs($user);
