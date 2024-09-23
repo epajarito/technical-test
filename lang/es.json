@@ -42,5 +42,8 @@
     "of": "de",
     "results": "resultados",
     "to": "a",
-    "Inventory information": "Información del inventario"
+    "Inventory information": "Información del inventario",
+    "Inventory created successfully": "Inventario creado con éxito",
+    "Inventory updated successfully": "Inventario actualizado con éxito",
+    "Inventory deleted successfully": "Inventario eliminado con éxito"
 }
